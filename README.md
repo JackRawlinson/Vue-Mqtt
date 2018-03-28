@@ -1,3 +1,5 @@
+#Fork of Original in an attempt to add IE11 support. Probably doesn't work;
+
 # Vue-Mqtt
 
 Connect to mqtt through websocket, implementation for Vuejs 2

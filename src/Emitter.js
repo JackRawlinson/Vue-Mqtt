@@ -50,7 +50,7 @@ export default new class {
     eq(str1, str2) {
         let arr1 = str1.split('/');
         let arr2 = str2.split('/');
-        if (!str1.includes('#') && !str2.includes('#') && arr1.length !== arr2.length) {
+        if(!str1.indexOf("#") >= 0 && !str2.indexOf("#") >= 0 && arr1.length !== arr2.length) {
             return false;
         }
         if (arr2.length < arr1.length) {

@@ -14,32 +14,17 @@ export default {
         Vue.mixin({
             created() {
                 let mqtt = this.$options['mqtt'];
-
-                this.$options.mqtt = new Proxy({}, {
-                    set: (target, key, value) => {
-                        Emitter.addListener(key, value, this);
-                        target[key] = value;
-                        return true;
-                    },
-                    deleteProperty: (target, key) => {
-                        Emitter.removeListener(key, this.$options.mqtt[key], this);
-                        delete target.key;
-                        return true;
-                    }
-                });
-
                 if (mqtt) {
                     Object.keys(mqtt).forEach((key) => {
-                        this.$options.mqtt[key] = mqtt[key];
+                        Emitter.addListener(key, mqtt[key], this);
                     });
                 }
             },
             beforeDestroy() {
                 let mqtt = this.$options['mqtt'];
-
                 if (mqtt) {
                     Object.keys(mqtt).forEach((key) => {
-                        delete this.$options.mqtt[key];
+                        Emitter.removeListener(key, mqtt[key], this);
                     });
                 }
             }
