@@ -1,17 +1,11 @@
-#Fork of Original in an attempt to add IE11 support. Probably doesn't work;
+# Vue-Mqtt : Fork in an attempt to add IE11 support.
 
-# Vue-Mqtt
-
-Connect to mqtt through websocket, implementation for Vuejs 2
-
-## Example
-
-Example [Vue-Mqtt-Example](https://github.com/nik-zp/Vue-Mqtt-Example)
+Probably doesn't work so i suggest using the original.
 
 ## Install
 
 ``` bash
-npm install vue-mqtt --save
+npm install JackRawlinson/Vue-Mqtt#master --save
 ```
 
 ## Usage
