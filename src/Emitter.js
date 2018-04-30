@@ -59,13 +59,16 @@ export default new class {
         }
         let ret = true;
         arr1.forEach((val, i) => {
+            if(arr2[i].length === 0) {
+                return; // Workaround for leading '/' in topics.
+            }
             if (val === '+' || val === '#'
                 || (arr2[i] && arr2[i] === '+')
                 || (arr2[i] && arr2[i] === '#')
                 || (arr2[i] && arr2[i] === val)) {
-                return;
+            } else {
+                ret = false;
             }
-            ret = false;
         })
         return ret;
     }
