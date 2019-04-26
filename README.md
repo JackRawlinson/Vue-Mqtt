@@ -11,7 +11,7 @@ npm install JackRawlinson/Vue-Mqtt#master --save
 ## Usage
 #### Configuration
 ``` js
-import VueMqtt from 'vue-mqtt';
+import VueMqtt from 'vue-mqtt-es5';
 Vue.use(VueMqtt, 'ws://iot.eclipse.org/ws', options);
 ```
 options: https://github.com/mqttjs/MQTT.js#client
